@@ -59,7 +59,7 @@ export default {
   },
   methods: {
     fetchAppointments() {
-      fetch("https://hldnlmhee0.execute-api:us-east-1:730335665786:hldnlmhee0/*/GET/appointments")
+      fetch("https://hldnlmhee0.execute-api.us-east-1.amazonaws.com/prodDoctorBooking/appointments")
         .then(res => res.json())
         .then(data => {
           const parsed = JSON.parse(data.body);
