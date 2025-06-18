@@ -4,6 +4,6 @@
 
 <script>
 export default {
-  name: 'Serverless-HealthBooking'
+  name: 'App'
 }
 </script>
