@@ -59,7 +59,7 @@ export default {
   },
   methods: {
     fetchAppointments() {
-      fetch("https://e2m2b7y8c9.execute-api:us-east-1:730335665786:hldnlmhee0/*/GET/appointments")
+      fetch("https://hldnlmhee0.execute-api:us-east-1:730335665786:hldnlmhee0/*/GET/appointments")
         .then(res => res.json())
         .then(data => {
           const parsed = JSON.parse(data.body);
@@ -74,7 +74,7 @@ export default {
       console.log("appointmentId:", cleanAppointment.appointmentId);
       console.log(" appointmentId (direct):", appointment.appointmentId);
 
-      const url = `https://e2m2b7y8c9.execute-api:us-east-1:730335665786:hldnlmhee0/*/PATCH/appointments/{appointmentId}`;
+      const url = `https://hldnlmhee0.execute-api:us-east-1:730335665786:hldnlmhee0/*/PATCH/appointments/{appointmentId}`;
 
       const payload = { status: newStatus };
 
