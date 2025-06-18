@@ -74,7 +74,7 @@ export default {
       console.log("appointmentId:", cleanAppointment.appointmentId);
       console.log(" appointmentId (direct):", appointment.appointmentId);
 
-      const url = `https://hldnlmhee0.execute-api.us-east-1.amazonaws.com/prodDoctorBooking/{appointmentId}`;
+      const url = `https://hldnlmhee0.execute-api.us-east-1.amazonaws.com/prodDoctorBooking/appointments/{appointmentId}`;
 
       const payload = { status: newStatus };
 
