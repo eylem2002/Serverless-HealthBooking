@@ -74,7 +74,7 @@ export default {
       console.log("appointmentId:", cleanAppointment.appointmentId);
       console.log(" appointmentId (direct):", appointment.appointmentId);
 
-      const url = `https://4pqx5j.execute-api:us-east-1:730335665786:hldnlmhee0/*/PATCH/appointments/{appointmentId}`;
+      const url = `https://e2m2b7y8c9.execute-api:us-east-1:730335665786:hldnlmhee0/*/PATCH/appointments/{appointmentId}`;
 
       const payload = { status: newStatus };
 
