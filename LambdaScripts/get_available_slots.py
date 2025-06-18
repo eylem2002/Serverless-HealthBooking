@@ -11,23 +11,31 @@ def lambda_handler(event, context):
             ExpressionAttributeValues={':b': False}
         )
         slots = response.get('Items', [])
+
         return {
-            'statusCode': 200,
-            'headers': {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'GET, POST, PATCH, OPTIONS',
-                'Access-Control-Allow-Headers': 'Content-Type'
+            "statusCode": 200,
+            "headers": {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET, POST, PATCH, OPTIONS",
+                "Access-Control-Allow-Headers": "Content-Type"
             },
-            'body': json.dumps(slots)
+            "body": json.dumps({
+                "message": "Available slots fetched successfully",
+                "data": slots
+            })
         }
+
     except Exception as e:
         return {
-            'statusCode': 500,
-            'headers': {
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'GET, POST, PATCH, OPTIONS',
-                'Access-Control-Allow-Headers': 'Content-Type'
+            "statusCode": 500,
+            "headers": {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET, POST, PATCH, OPTIONS",
+                "Access-Control-Allow-Headers": "Content-Type"
             },
-            'body': json.dumps({'error': str(e)})
+            "body": json.dumps({
+                "error": str(e)
+            })
         }
