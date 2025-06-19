@@ -5,6 +5,9 @@ dynamodb = boto3.resource('dynamodb')
 appointments_table = dynamodb.Table('Appointments')
 
 def lambda_handler(event, context):
+    print("pathParameters:", event.get('pathParameters'))
+    print("Full event:", json.dumps(event))
+
     if event.get('httpMethod') == 'OPTIONS':
         return {
             'statusCode': 200,
