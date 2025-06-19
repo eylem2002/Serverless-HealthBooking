@@ -76,6 +76,7 @@ export default {
 
       const url = `https://hldnlmhee0.execute-api.us-east-1.amazonaws.com/prodDoctorBooking/appointments/${appointment.appointmentId}`;
 
+
       const payload = { status: newStatus };
 
       fetch(url, {
@@ -96,6 +97,8 @@ export default {
             return JSON.parse(rawBody);
           })
           .then(() => {
+            console.log("New status chosen:", newStatus);  
+            appointment.status = newStatus;
             alert("Status updated!");
           })
           .catch(err => {
